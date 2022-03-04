@@ -130,6 +130,13 @@ git commit -am"Create a New Branch"
 git push -u origin CreateBranch
 ```
 
+**Note**
+如果是clone的别人的repo，可以添加自己的远程库
+```git
+git remote add summer git@github.com:c137chao/git-demo.git
+git push summer <Branch Name>
+```
+
 切换回 main 分支 `git checkout main`
 
 
