@@ -7,9 +7,19 @@ Remote： 远程仓库
 
 工作区是我们本地目录管理的代码文件，版本库就是git所管理的代码文件，可以进行版本回退，看到有哪些未提交的修改等等。  
 暂存区是我们add但没有commit的代码文件。
+<br/>
+<h1 align="right">git学习记录</h1>
 
 ---
-## 1.基本操作
+git学习资料：[官方教程](https://git-scm.com/book/zh/v2)，[廖雪峰](https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496) ，[CSDN看到的另一份参考资料](https://blog.csdn.net/u011535541/article/details/83379151)
+
+---
+设置自己的username（仓库地址里的那个username）和 email
+```git
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+```
+<h2><center>1.基本操作 </center></h2>
 
 **创建本地仓库(版本库)**
 
@@ -57,9 +67,9 @@ git reset --hard 版本号 # 回退到某个特定版本
 git checkout --filename
 ```
 
-## 2.远程仓库
+<h2><center>2.远程仓库 </center></h2
 
-在github网页新建一个epoh后
+在github网页新建一个 repo 后
 
 ```git
 git remote add origin git@github.com:YourUserName/git-demo.git
@@ -68,3 +78,49 @@ git push -u origin main
 ```
 
 [关于SSH无法链接github.com](https://blog.csdn.net/vosang/article/details/50499300)
+
+看到 **origin** 可以理解为他就是我们 github 上的远程仓库的默认名字  
+
+`git remote add <远程仓库名> <远程仓库地址>` 把本地库关联到远程库  
+
+`git push -u origin main` 把当前分支推送到远程库的main分支
+`-u`表示会把本地 main 分支与远程库 main 分支  关联起来  
+
+以后再提交只需要 `git push origin main`
+
+<br/>
+查看关联的远程分支
+
+ ```git
+ git remote -v
+
+origin  git@github.com:c137chao/git-demo.git (fetch)
+origin  git@github.com:c137chao/git-demo.git (push)
+ ```
+
+ 与远程分支解除关联  
+ ```git
+ git remote rm origin
+ ```
+
+ 远程仓库克隆到本地（例如）
+ ```
+git clone git@github.com:c137chao/git-demo.git
+ ```
+
+<h2><center>3.分支管理</center></h2>
+
+**创建并切换分支**
+```git
+git checkout -b <Branch Name>
+```
+`-b`表示创建并切换，相当于以下两条命令
+```git
+$ git branch <Branch Name>
+$ git checkout <Branch Name>
+```
+通过`git branch`查看当前分支
+```
+* CreateBranch
+  main
+```
