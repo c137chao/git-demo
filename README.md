@@ -124,8 +124,14 @@ $ git checkout <Branch Name>
 * CreateBranch
   main
 ```
+提交修改并push到远程库的新分支
+```git
+git commit -am"Create a New Branch"
+git push -u origin CreateBranch
+```
 
 切换回 main 分支 `git checkout main`
+
 
 <br/>
 
