@@ -119,8 +119,22 @@ git checkout -b <Branch Name>
 $ git branch <Branch Name>
 $ git checkout <Branch Name>
 ```
-通过`git branch`查看当前分支
+通过`git branch`**查看当前分支**
 ```
 * CreateBranch
   main
+```
+
+切换回 main 分支 `git checkout main`
+
+<br/>
+
+**合并到当前分支**  
+```git
+git merge <Branch Name>
+```
+
+*合并以后就可以**删除刚才创建的分支** 
+```git
+git branch -d <Branch Name>
 ```
