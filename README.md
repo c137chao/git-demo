@@ -20,10 +20,13 @@ git init
 ```git
 git add README.md 
 ```
-**把文件提交到本地仓库(版本库)**
+**将暂存区提交到本地仓库(版本库)**
 ```git
 git commit -m"commit a README file"
 ```
+或者 `git commit -am"commit a README file"`一步搞定
+
+<br/> 
 
 查看当前状态（当前分支，是否有需要提交的修改）
 ```git
@@ -46,6 +49,8 @@ git reset --hard HEAD~100 #回退到前100个版本
 git reset --hard 版本号 # 回退到某个特定版本
 ```
 版本号可以通过 `git log` 或 `git reflog`获取  
+
+<br/>
   
 **放弃当前工作对某个文件的修改**
 ```git
@@ -53,3 +58,13 @@ git checkout --filename
 ```
 
 ## 2.远程仓库
+
+在github网页新建一个epoh后
+
+```git
+git remote add origin git@github.com:YourUserName/git-demo.git
+git branch -M main
+git push -u origin main
+```
+
+[关于SSH无法链接github.com](https://blog.csdn.net/vosang/article/details/50499300)
